@@ -7,9 +7,12 @@ const scissors = 3
 
 // Computer choses random option of rock, paper or scissors.
 
+let getComputerChoice = Math.floor(Math.random() * 3) + 1;
 
 // Prompt user to select rock, paper or scissors.
 // Adjust users Input to LOWER CASE.
+
+let 
 
 
 
