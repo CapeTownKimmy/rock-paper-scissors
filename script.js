@@ -1,8 +1,8 @@
 // Computer choses random option of rock, paper or scissors.
 
-let getComputerChoice = Math.floor(Math.random() * 3) + 1;
+let computerSelection = Math.floor(Math.random() * 3) + 1;
 
-console.log(getComputerChoice); //Just checking...
+console.log(computerSelection);                                                         //Just checking...
 
 
 // Prompt user to select rock, paper or scissors.
@@ -30,41 +30,34 @@ switch (playerSelection) {
         error = 'Sorry, try again!'
         console.log(error);
 }
-console.log(playerSelection); //Just checking...
+console.log(playerSelection);                                                           //Just checking...
+
+
+// Game
+
+function playRound(playerSelection, computerSelection) {
+
+    
+    if (playerSelection === computerSelection) {
+        return 'It\'s a tie!!'                                      // TIE
+    } else if (playerSelection === 1 && computerSelection === 2) {
+        return 'Paper beats Rock! Computer wins!!';                 // ROCK vs PAPER
+    } else if (playerSelection === 1 && computerSelection === 3) {
+        return 'Rock beats Scissors! You win!!';                    // ROCK vs SCISSORS
+    } else if (playerSelection === 2 && computerSelection === 1) {
+        return 'Paper beats Rock! You win!!';                       // PAPER vs ROCK
+    } else if (playerSelection === 2 && computerSelection === 3) {
+        return 'Scissors beat Paper! Computer wins!!';              // PAPER vs SCISSORS
+    } else if (playerSelection === 3 && computerSelection === 1) {
+        return 'Rock beats Scissors! Computer wins!!';              // SCISSORS vs ROCK 
+    } else if (playerSelection === 3 && computerSelection === 2) {
+        return 'Scissors beat Paper! You win!!';                    // SCISSORS vs PAPER
+    }
+}
+console.log(playRound(playerSelection, computerSelection));                             //Just checking...
 
 
 
-// if the users choice and computers choice are EQUAL then return a TIE message to the console.
-
-// function playRound(playerSelection, computerSelection) {
-
-//     if (playerSelection === computerSelection) {
-//         return 'It\'s a tie!!' 
-//     }
-// }
-// 
-
-// ROCK: If the user choice is ROCK and computer choice is PAPER then return a COMPUTER WINS message to the console.
-// Add 1 to COMPUTERS score.
-
-// ROCK: If the users choice is ROCK and computer choice is SCISSORS then return a USER WINS message to the console.
-// Add 1 to the USERS score.
-
-
-
-// PAPER: If the user choice is PAPER and computer choice is ROCK then return a USER WINS message to the console.
-// Add 1 to USERS score.
-
-// PAPER: If the user choice is PAPER and computer choice is SCISSORS then return a COMPUTER WINS message to the console.
-// Add 1 to COMPUTERS score.
-
-
-
-// SCISSORS: If the user choice is SCISSORS and computer choice is ROCK then return a COMPUTER WINS message to the console.
-// Add 1 to COMPUTER score.
-
-// SCISSORS: If the user choice is SCISSORS and computer choice is PAPER then return a USER WINS message to the console.
-// Add 1 to USERS score.
 
 
 // DEFAULT: If user inputs doesnt match rock, paper, or scissors then return an ERROR message to the console.
