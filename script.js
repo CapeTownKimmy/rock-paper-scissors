@@ -1,22 +1,48 @@
-// Assign integers to the rock, paper, scissors variables.
-
-const rock = 1
-const paper = 2
-const scissors = 3
-
-
 // Computer choses random option of rock, paper or scissors.
 
 let getComputerChoice = Math.floor(Math.random() * 3) + 1;
 
+console.log(getComputerChoice); //Just checking...
+
+
 // Prompt user to select rock, paper or scissors.
 // Adjust users Input to LOWER CASE.
 
-let 
+let selection = prompt('Choose your weapon, rock, paper or scissors?');
+
+let playerSelection = selection.toLowerCase();
+
+
+// Assign integers to the rock, paper, scissors variables.
+
+switch (playerSelection) {
+    case 'rock':
+        playerSelection = 1;
+        break;
+    case 'paper':
+        playerSelection = 2;
+        break;
+    case 'scissors':
+        playerSelection = 3;
+        break;
+    default:
+        let error = playerSelection === false;
+        error = 'Sorry, try again!'
+        console.log(error);
+}
+console.log(playerSelection); //Just checking...
 
 
 
 // if the users choice and computers choice are EQUAL then return a TIE message to the console.
+
+// function playRound(playerSelection, computerSelection) {
+
+//     if (playerSelection === computerSelection) {
+//         return 'It\'s a tie!!' 
+//     }
+// }
+// 
 
 // ROCK: If the user choice is ROCK and computer choice is PAPER then return a COMPUTER WINS message to the console.
 // Add 1 to COMPUTERS score.
