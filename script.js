@@ -1,10 +1,25 @@
-// Computer choses random option of 1, 2 and 3.
+//Display elements: choices and score.
 
-let computerSelection = Math.floor(Math.random() * 3) + 1;
+const playerChoiceDisp = document.getElementById('playerChoice')
+const computerChoiceDisp = document.getElementById('computerChoice')
+const resultDisp = document.getElementById('winner')
+const possibleChoices = document.querySelectorAll('button')
+let playerChoice
+let computerSelection
+let result
 
-console.log(computerSelection);                                                         //Just checking...
+// User Choice
 
-// Assign rock, paper and scissors to the integers.
+possibleChoices.forEach(possibleChoice => possibleChoice.addEventListener('click', (e) =>{
+    playerChoice = e.target.id
+    playerChoiceDisp.innerHTML = playerChoice
+    generateCompChoice()
+    getResult()
+}))
+
+function generateCompChoice(){
+
+    computerSelection = Math.floor(Math.random() * 3) + 1;
 
 switch (computerSelection) {
     case 1: 
@@ -17,11 +32,41 @@ switch (computerSelection) {
         computerSelection = 'scissors';
         break;
 }
-console.log(computerSelection);
+
+computerChoiceDisp.innerHTML = computerSelection
+}
+
+function getResult() {
+
+     if (playerChoice === computerSelection) {
+        result = 'It\'s a tie!!' 
+    } 
+    else if (playerChoice === 'rock' && computerSelection === 'paper') {                                 
+        result = 'Paper beats Rock! Computer wins!!';
+    } 
+    else if (playerChoice === 'rock' && computerSelection === 'scissors') {
+        result = 'Rock beats Scissors! You win!!';                    // ROCK vs SCISSORS
+    } 
+    else if (playerChoice === 'paper' && computerSelection === 'rock') {
+        result = 'Paper beats Rock! You win!!';                       // PAPER vs ROCK
+    } 
+    else if (playerChoice === 'paper' && computerSelection === 'scissors') {
+        result = 'Scissors beat Paper! Computer wins!!';              // PAPER vs SCISSORS
+    } 
+    else if (playerChoice === 'scissors' && computerSelection === 'rock') {
+        result = 'Rock beats Scissors! Computer wins!!';              // SCISSORS vs ROCK
+    } 
+    else if (playerChoice === 'scissors' && computerSelection === 'paper') {
+        result = 'Scissors beat Paper! You win!!';                    // SCISSORS vs PAPER
+    }
+    resultDisp.innerHTML = result
+}
 
 
 
-// userSelection from html buttons.
+
+
+
 
 
 
@@ -70,8 +115,6 @@ console.log(computerSelection);
 //         return 'It\'s a tie!!'                                      // TIE
 //     } else if (playerSelection === 1 && computerSelection === 2) {                                 
 //         return 'Paper beats Rock! Computer wins!!';
-        
-        
 //     } else if (playerSelection === 1 && computerSelection === 3) {
 //         return 'Rock beats Scissors! You win!!';                    // ROCK vs SCISSORS
 //     } else if (playerSelection === 2 && computerSelection === 1) {
