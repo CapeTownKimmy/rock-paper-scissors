@@ -3,16 +3,132 @@
     padding: 0;
 }
 
+/*--------------------Game Board Area--------------------*/
 div.gameArea {
-    border: 2px solid red;
+    border: 3px solid #595959;
+    background-color: #38a692;
+    border-radius: 8px;
+
+    width: 80%;
+    height: auto;
+    max-width: 800px;
+
+    margin: 4rem auto;
 }
 
-div.playerChoice, .computerChoice {
-    border: 2px solid blue;
+
+/*--------------------Heading--------------------*/
+
+h1 {
+    font-family: 'Roboto Mono', monospace;
+    font-size: 2.5rem;
+    font-weight: 400;
+
+    color: #f2f2f2;
+    text-shadow: -1.5px -1.5px 0 #595959, 1.5px -1.5px 0 #595959, -1.5px 1.5px 0 #595959, 1.5px 1.5px 0 #595959;
+    text-align: center;
+    margin: 40px 0px 40px 0px;
 }
 
-div.playerScore, .computerScore {
-    border: 2px solid purple;
-    width: 60px;
-    height: 60px;
+
+/*--------------------Button Styling--------------------*/
+
+.selections {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+
+    margin-bottom: 2rem;
+}
+.selections button {
+    background-color: #f2f2f2;
+    border: 2px solid #595959;
+    border-radius: 5px;
+
+    color: #595959;
+    font-family: 'Roboto Mono', monospace;
+    font-size: 1.5rem;
+
+    min-width: 200px;
+    min-height: 50px;
+}
+
+
+/*--------------------H2 Styling--------------------*/
+
+h2 {
+    color: #595959;
+    font-family: 'Roboto Mono', monospace;
+    font-weight: 400;
+    font-size: 1.7rem; 
+    text-shadow: -0.7px -0.7px 0 #f2f2f2, 0.7px -0.7px 0 #f2f2f2, -0.7px 0.7px 0 #f2f2f2, 0.7px 0.7px 0 #f2f2f2;
+    text-align: center;
+}
+
+
+/*--------------------Player & Computer Choices Styling--------------------*/
+.gameContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.playerContainer, .computerContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 30px;
+
+    margin: 2rem 0;
+    padding: 1rem;
+}
+
+.playerChoice, .computerChoice {
+    width: 210px;
+    height: 210px;
+
+    background-color: #f2f2f2;
+    border: 2px solid #595959;
+    border-radius: 5px;
+}
+.playerChoice p, .computerChoice p {
+    text-align: center;
+
+    color: #595959;
+    font-family: 'Roboto Mono', monospace;
+
+    padding: 5px 0px;
+}
+.vs {
+    color: #f2f2f2;
+    font-family: 'Roboto Mono', monospace;
+    font-size: 1.8rem;
+    font-weight: 100;
+    text-shadow: -0.7px -0.7px 0 #595959, 0.7px -0.7px 0 #595959, -0.7px 0.7px 0 #595959, 0.7px 0.7px 0 #595959;
+
+    align-self: flex-start;
+    padding-top: 150px;
+}
+
+/*--------------------Winner Box Styling--------------------*/
+
+.winnerPlayer, .winnerComputer {
+    border: 6px solid #d76530;
+    border-radius: 5px;
+    padding: 10px;
+}
+
+/*--------------------Score Card Styling--------------------*/
+
+.playerScoreBox, .computerScoreBox {
+    width: 50px;
+    height: 50px;
+}
+.playerScoreBox p, .computerScoreBox p {
+    color: #595959;
+    font-family: 'Roboto Mono', monospace;
+    text-shadow: -0.7px -0.7px 0 #f2f2f2, 0.7px -0.7px 0 #f2f2f2, -0.7px 0.7px 0 #f2f2f2, 0.7px 0.7px 0 #f2f2f2;
+    font-size: 2rem;
+    text-align: center;
 }

@@ -7,6 +7,9 @@
     <title>Rock, Paper, Scissors!</title>
     <script src="./script.js" async></script>
     <link rel="stylesheet" href="./style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300;400;600&display=swap" rel="stylesheet">
 </head>
 
 <body>
@@ -19,29 +22,36 @@
             <button id="scissors">Scissors</button>
         </div>
 
-        <h3>First player to 5 wins! </h3>
+        <h2>First player to 5 wins! </h2>
 
-        <div class="winnerPlayer">
-            <div class="playerChoice">
-                <p>Player:</p>
+        <div class="gameContainer">   
+            <div class="playerContainer">
+                <div class="winnerPlayer">
+                    <div class="playerChoice">
+                        <p>Player:</p>
+                    </div>
+                </div>
+            <div class="playerScoreBox">
+                <p>0</p>
+            </div>
+            </div>
+
+            <p class="vs">vs</p>
+
+            <div class="computerContainer">
+                <div class="winnerComputer">
+                    <div class="computerChoice">
+                        <p>Computer:</p>
+                    </div>
+                </div>
+                <div class="computerScoreBox">
+                    <p>0</p> 
+                </div>
             </div>
         </div>
+        
 
-        <p>vs</p>
 
-        <div class="winnerComputer">
-            <div class="computerChoice">
-                <p>Computer:</p>
-            </div>
-        </div>
-
-        <div class="playerScore">
-            
-        </div>
-
-        <div class="computerScore">
-            
-        </div>
 
 
 
