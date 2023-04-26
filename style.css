@@ -1,0 +1,18 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+div.gameArea {
+    border: 2px solid red;
+}
+
+div.playerChoice, .computerChoice {
+    border: 2px solid blue;
+}
+
+div.playerScore, .computerScore {
+    border: 2px solid purple;
+    width: 60px;
+    height: 60px;
+}

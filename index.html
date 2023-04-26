@@ -10,30 +10,54 @@
 </head>
 
 <body>
-    <h1>Rock, Paper, Scissors!</h1>
+    <div class="gameArea">
+        <h1>Rock, Paper, Scissors!</h1>
 
-    <h2>Choose your weapon:</h2>
+        <div class="selections">
+            <button id="rock">Rock</button>
+            <button id="paper">Paper</button>
+            <button id="scissors">Scissors</button>
+        </div>
 
-    <h3>First player to 5 points is the winner! </h3>
+        <h3>First player to 5 wins! </h3>
 
-    <div class="selections">
-        <button id="rock">Rock</button>
-        <button id="paper">Paper</button>
-        <button id="scissors">Scissors</button>
-    </div>
+        <div class="winnerPlayer">
+            <div class="playerChoice">
+                <p>Player:</p>
+            </div>
+        </div>
 
-    <div class="resultDisplay">
-        <p>You:  <span id="playerChoice"></span></span></p>
-        <p>Computer:  <span id="computerChoice"></span></span> </p>
-        <p>Result:  <span id="winner"></span></span> </p>
-    </div>
+        <p>vs</p>
 
-    <h3 class="score">Score:</h3>
-    <p>You:<span id="playerScore"></span></p>
-    <p>Computer:<span id="computerScore"></span></p>
+        <div class="winnerComputer">
+            <div class="computerChoice">
+                <p>Computer:</p>
+            </div>
+        </div>
 
-    <h2 id="gameWinner"></h2>
-    
+        <div class="playerScore">
+            
+        </div>
+
+        <div class="computerScore">
+            
+        </div>
+
+
+
+
+        <!-- <div class="resultDisplay">
+            <p>You:  <span id="playerChoice"></span></span></p>
+            <p>Computer:  <span id="computerChoice"></span></span> </p>
+            <p>Result:  <span id="winner"></span></span> </p>
+        </div>
+
+        <h3 class="score">Score:</h3>
+        <p>You:<span id="playerScore"></span></p>
+        <p>Computer:<span id="computerScore"></span></p>
+
+        <h2 id="gameWinner"></h2>
+    </div> -->
 
 </body>
 </html>
