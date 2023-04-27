@@ -5,11 +5,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rock, Paper, Scissors!</title>
-    <script src="./script.js" async></script>
     <link rel="stylesheet" href="./style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
 </head>
 
@@ -30,6 +32,9 @@
                 <div class="winnerPlayer">
                     <div class="playerChoice">
                         <p>Player:</p>
+                        <div class="playerIcon" id="playerRockIcon"><span class="material-symbols-outlined">diamond</span></div>
+                        <div class="playerIcon" id="playerPaperIcon"><span class="material-symbols-outlined">history_edu</span></div>
+                        <div class="playerIcon" id="playerScissorsIcon"><span class="material-symbols-outlined">cut</span></div>
                     </div>
                 </div>
             <div class="playerScoreBox">
@@ -43,6 +48,9 @@
                 <div class="winnerComputer">
                     <div class="computerChoice">
                         <p>Computer:</p>
+                        <div class="computerIcon" id="compRockIcon"><span class="material-symbols-outlined">diamond</span></div>
+                        <div class="computerIcon" id="compPaperIcon"><span class="material-symbols-outlined">history_edu</span></div>
+                        <div class="computerIcon" id="compScissorsIcon"><span class="material-symbols-outlined">cut</span></div>
                     </div>
                 </div>
                 <div class="computerScoreBox">
@@ -81,6 +89,6 @@
 
         <h2 id="gameWinner"></h2>
     </div> -->
-
+    <script src="./script.js" async></script>
 </body>
 </html>

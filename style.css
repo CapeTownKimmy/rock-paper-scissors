@@ -8,6 +8,7 @@ div.gameArea {
     border: 3px solid #595959;
     background-color: #38a692;
     border-radius: 8px;
+    box-shadow: 5px 5px 15px #595959;
 
     width: 80%;
     height: auto;
@@ -51,6 +52,20 @@ h1 {
 
     min-width: 200px;
     min-height: 50px;
+
+    transform: scale(1);
+}
+.selections button:hover {
+    transform: scale(1.1);
+    box-shadow: 2px 2px 4px #595959;
+}
+.selections button:active {
+    transform: scale(0.99);
+    border: 1px solid #f2f2f2;
+    background-color: #595959;
+
+    color: #f2f2f2;
+    box-shadow: 2px 2px 4px #595959;
 }
 
 
@@ -91,6 +106,8 @@ h2 {
     background-color: #f2f2f2;
     border: 2px solid #595959;
     border-radius: 5px;
+
+    position: relative;
 }
 .playerChoice p, .computerChoice p {
     text-align: center;
@@ -111,12 +128,70 @@ h2 {
     padding-top: 150px;
 }
 
+/*--------------------Icons Styling--------------------*/
+
+.playerIcon span, .computerIcon span {
+    color: #595959;
+    font-size: 8rem;
+}
+#playerRockIcon {
+    position: absolute;
+    top: 50px;
+    left: 40px;
+
+    visibility: hidden;
+}
+#playerPaperIcon {
+    position: absolute;
+    top: 50px;
+    left: 40px;
+
+    visibility: hidden;
+}
+#playerScissorsIcon {
+    position: absolute;
+    top: 50px;
+    left: 40px;
+
+    visibility: hidden;
+}
+
+#compRockIcon {
+    position: absolute;
+    top: 50px;
+    left: 40px;
+
+    visibility: hidden;
+}
+#compPaperIcon {
+    position: absolute;
+    top: 50px;
+    left: 40px;
+
+    visibility: hidden;
+}
+#compScissorsIcon {
+    position: absolute;
+    top: 50px;
+    left: 40px;
+
+    visibility: hidden;
+}
+
+
+
 /*--------------------Winner Box Styling--------------------*/
 
 .winnerPlayer, .winnerComputer {
-    border: 6px solid #d76530;
+    border: none;
     border-radius: 5px;
     padding: 10px;
+}
+.winnerPlayer.active {
+    border: 6px solid #d76530;
+}
+.winnerComputer.active {
+    border: 6px solid #d76530;
 }
 
 /*--------------------Score Card Styling--------------------*/
