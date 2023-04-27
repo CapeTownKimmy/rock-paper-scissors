@@ -29,7 +29,7 @@
 
         <div class="gameContainer">   
             <div class="playerContainer">
-                <div class="winnerPlayer">
+                <div class="winnerPlayer" id="winner">
                     <div class="playerChoice">
                         <p>Player:</p>
                         <div class="playerIcon" id="playerRockIcon"><span class="material-symbols-outlined">diamond</span></div>
@@ -45,7 +45,7 @@
             <p class="vs">vs</p>
 
             <div class="computerContainer">
-                <div class="winnerComputer">
+                <div class="winnerComputer" id="winner">
                     <div class="computerChoice">
                         <p>Computer:</p>
                         <div class="computerIcon" id="compRockIcon"><span class="material-symbols-outlined">diamond</span></div>
@@ -60,7 +60,7 @@
         </div>
     </div>
     
-    
+    <div id="winnerModal"></div>
     <div class="modalBody">
         <div class="modalText">
             <button data-close-button class="closeBtn">&times</button>
@@ -72,6 +72,7 @@
     </div>
 
     <div class="overlay"></div>
+</div>
 
 
 
