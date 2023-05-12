@@ -99,7 +99,7 @@ h2 {
     padding: 1rem;
 }
 
-.playerChoice, .computerChoice {
+#playerChoice, #computerChoice {
     width: 210px;
     height: 210px;
 
@@ -110,7 +110,7 @@ h2 {
     position: relative;
 }
 
-.playerChoice p, .computerChoice p {
+#playerChoice p, #computerChoice p {
     text-align: center;
 
     color: #595959;
@@ -129,13 +129,14 @@ h2 {
     padding-top: 150px;
 }
 
-/* Winner Styling */
-/* .playerChoice {
+/* Border Styling */
+
+.playerWinnerBorder {
     box-shadow: 0 0 0 8px #38a692, 0 0 0 15px #d76530; 
 }
-.computerChoice {
+.compWinnerBorder {
     box-shadow: 0 0 0 8px #38a692, 0 0 0 15px #d76530;
-} */
+}
 
 /*--------------------Icons Styling--------------------*/
 

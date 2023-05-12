@@ -1,10 +1,13 @@
 //Display elements: choices and score.
 
 const possibleChoices = document.querySelectorAll('button');                    //All buttons//
+
 const playerChoiceDisp = document.getElementsByClassName('playerIcon');         //Player Icons//
-const computerChoiceDisp = document.getElementsByClassName('computerIcon');     //Comp Icons
+const computerChoiceDisp = document.getElementsByClassName('computerIcon');     //Comp Icons//
+
 const playerScoreDisp = document.getElementById('playerScoreDisp');             //Player Score display//
 const computerScoreDisp = document.getElementById('computerScoreDisp');         //Comp Score display//
+
 const winnerModal = document.getElementById('winnerModal');                     //Game winner pop-up//
 
 
@@ -85,8 +88,9 @@ function getResult() {
         ||
         (playerChoice === 'rock' && computerSelection === 'scissors')
         ) {
-            winnerBorderPlayer();
-            return playerScoreDisp.innerHTML = playerScore++;
+            console.log('Player Wins');
+            winnerPlayer();
+            return playerScoreDisp.innerHTML = playerScore +1;
     } 
     else if (
         (playerChoice === 'rock' && computerSelection === 'paper')
@@ -95,8 +99,9 @@ function getResult() {
         ||
         (playerChoice === 'scissors' && computerSelection === 'rock')
         ) {
-            winnerBorderComp();
-            return computerScoreDisp.innerHTML = computerScore++;
+            console.log('Comp Wins');
+            winnerComp();
+            return computerScoreDisp.innerHTML = computerScore +1;
         }
    
 }
@@ -117,9 +122,14 @@ function gameOver() {
     
 }
 
-//function to display winner border - player//
-function winnerBorderPlayer() {
-    
+//functions to display winner border//
+function winnerPlayer() {
+    const winnerBorderPlayer = document.getElementById('playerChoice').classList;
+    winnerBorderPlayer.add('playerWinnerBorder');
+}
+function winnerComp() {
+    const winnerBorderComp = document.getElementById('computerChoice').classList;
+    winnerBorderComp.add('compWinnerBorder');
 }
 
 
