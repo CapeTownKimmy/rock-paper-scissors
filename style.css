@@ -109,6 +109,7 @@ h2 {
 
     position: relative;
 }
+
 .playerChoice p, .computerChoice p {
     text-align: center;
 
@@ -127,6 +128,14 @@ h2 {
     align-self: flex-start;
     padding-top: 150px;
 }
+
+/* Winner Styling */
+/* .playerChoice {
+    box-shadow: 0 0 0 8px #38a692, 0 0 0 15px #d76530; 
+}
+.computerChoice {
+    box-shadow: 0 0 0 8px #38a692, 0 0 0 15px #d76530;
+} */
 
 /*--------------------Icons Styling--------------------*/
 
@@ -182,17 +191,26 @@ h2 {
 
 /*--------------------Winner Box Styling--------------------*/
 
-.winnerPlayer, .winnerComputer {
-    border: none;
+
+
+/* #playerWinnerBorder { */
+    /* border: 6px solid #38a692; */
+    /* outline: 6px solid #d76530;
+    border-radius: 3px;
+    padding: 10px 15px 15px 10px;
+
+    width: 210px;
+    height: 210px;
+}
+#computerWinnerBorder {
+    border: 6px solid #d76530;
     border-radius: 5px;
-    padding: 10px;
-}
-.winnerPlayer.active {
-    border: 6px solid #d76530;
-}
-.winnerComputer.active {
-    border: 6px solid #d76530;
-}
+    padding: 10px 15px 15px 10px;
+
+    width: 210px;
+    height: 210px;
+} */
+
 
 /*--------------------Score Card Styling--------------------*/
 

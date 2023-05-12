@@ -1,20 +1,19 @@
 //Display elements: choices and score.
 
-const possibleChoices = document.querySelectorAll('button')
-const playerChoiceDisp = document.getElementsByClassName('playerIcon')
-const computerChoiceDisp = document.getElementsByClassName('computerIcon')
-const resultDisp = document.getElementById('winner')
-const playerScoreDisp = document.getElementsByClassName('playerScoreBox')
-const computerScoreDisp = document.getElementsByClassName('computerScoreBox')
-const winnerModal = document.getElementById('winnerModal')
+const possibleChoices = document.querySelectorAll('button');                    //All buttons//
+const playerChoiceDisp = document.getElementsByClassName('playerIcon');         //Player Icons//
+const computerChoiceDisp = document.getElementsByClassName('computerIcon');     //Comp Icons
+const playerScoreDisp = document.getElementById('playerScoreDisp');             //Player Score display//
+const computerScoreDisp = document.getElementById('computerScoreDisp');         //Comp Score display//
+const winnerModal = document.getElementById('winnerModal');                     //Game winner pop-up//
 
-let playerChoice
-let computerSelection
-let playerElement
-let compElement
-let result
-let playerScore = 0
-let computerScore = 0
+
+let playerChoice            //The button clicked by player//
+let computerSelection       //The random number assigned to rps//
+let playerElement           //Players icon displys linked to button//
+let compElement             //Computer icon displys linked to button//
+let playerScore = 0;        //Player score//
+let computerScore = 0;      //Computer score//
 
 // User Choice Button clicks//
 
@@ -22,7 +21,7 @@ possibleChoices.forEach(possibleChoice => possibleChoice.addEventListener('click
     playerChoice = e.target.id
     showPlayerIcon()
     generateCompChoice()
-    // getResult()
+    getResult()
     // gameOver()
 }))
 
@@ -77,35 +76,29 @@ function generateCompChoice(){
 function getResult() {
 
      if (playerChoice === computerSelection) {
-        result = 'It\'s a tie!!' 
+       
     } 
-    else if (playerChoice === 'rock' && computerSelection === 'paper') {                                 
-        result = 'Paper beats Rock! Computer wins!!';
-        ++computerScore
+    else if (
+        (playerChoice === 'scissors' && computerSelection === 'paper')
+        ||
+        (playerChoice === 'paper' && computerSelection === 'rock')
+        ||
+        (playerChoice === 'rock' && computerSelection === 'scissors')
+        ) {
+            winnerBorderPlayer();
+            return playerScoreDisp.innerHTML = playerScore++;
     } 
-    else if (playerChoice === 'rock' && computerSelection === 'scissors') {
-        result = 'Rock beats Scissors! You win!!';                    // ROCK vs SCISSORS
-        ++playerScore
-    } 
-    else if (playerChoice === 'paper' && computerSelection === 'rock') {
-        result = 'Paper beats Rock! You win!!';                       // PAPER vs ROCK
-        ++playerScore
-    } 
-    else if (playerChoice === 'paper' && computerSelection === 'scissors') {
-        result = 'Scissors beat Paper! Computer wins!!';              // PAPER vs SCISSORS
-        ++computerScore
-    } 
-    else if (playerChoice === 'scissors' && computerSelection === 'rock') {
-        result = 'Rock beats Scissors! Computer wins!!';              // SCISSORS vs ROCK
-        ++computerScore
-    } 
-    else if (playerChoice === 'scissors' && computerSelection === 'paper') {
-        result = 'Scissors beat Paper! You win!!';                    // SCISSORS vs PAPER
-        ++playerScore
-    }
-    resultDisp.innerHTML = result
-    computerScoreDisp.innerHTML = computerScore
-    playerScoreDisp.innerHTML = playerScore
+    else if (
+        (playerChoice === 'rock' && computerSelection === 'paper')
+        ||
+        (playerChoice === 'paper' && computerSelection === 'scissors')
+        ||
+        (playerChoice === 'scissors' && computerSelection === 'rock')
+        ) {
+            winnerBorderComp();
+            return computerScoreDisp.innerHTML = computerScore++;
+        }
+   
 }
 
 
@@ -124,10 +117,21 @@ function gameOver() {
     
 }
 
+//function to display winner border - player//
+function winnerBorderPlayer() {
+    
+}
 
 
+//player wins//
+// (playerChoice === 'scissors' && computerSelection === 'paper')
+// (playerChoice === 'paper' && computerSelection === 'rock')
+// (playerChoice === 'rock' && computerSelection === 'scissors')
 
-
+//comp wins
+// (playerChoice === 'rock' && computerSelection === 'paper')
+// (playerChoice === 'paper' && computerSelection === 'scissors')
+// (playerChoice === 'scissors' && computerSelection === 'rock')
 
 
 

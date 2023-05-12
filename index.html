@@ -29,7 +29,7 @@
 
         <div class="gameContainer">   
             <div class="playerContainer">
-                <div class="winnerPlayer" id="winner">
+                <div id="playerWinnerBorder">
                     <div class="playerChoice">
                         <p>Player:</p>
                         <div class="playerIcon" id="playerRockIcon"><span class="material-symbols-outlined">diamond</span></div>
@@ -38,14 +38,14 @@
                     </div>
                 </div>
             <div class="playerScoreBox">
-                <p>0</p>
+                <p id="playerScoreDisp">0</p>
             </div>
             </div>
 
             <p class="vs">vs</p>
 
             <div class="computerContainer">
-                <div class="winnerComputer" id="winner">
+                <div id="computerWinnerBorder">
                     <div class="computerChoice">
                         <p>Computer:</p>
                         <div class="computerIcon" id="compRockIcon"><span class="material-symbols-outlined">diamond</span></div>
@@ -54,25 +54,25 @@
                     </div>
                 </div>
                 <div class="computerScoreBox">
-                    <p>0</p> 
+                    <p id="computerScoreDisp">0</p> 
                 </div>
             </div>
         </div>
     </div>
     
-    <div id="winnerModal"></div>
-    <div class="modalBody">
-        <div class="modalText">
-            <button data-close-button class="closeBtn">&times</button>
-            <p>Temp Text</p>
-            <p>wins!</p>
+    <div id="winnerModal">
+        <div class="modalBody">
+            <div class="modalText">
+                <button data-close-button class="closeBtn">&times</button>
+                <p>Temp Text</p>
+                <p>wins!</p>
+            </div>
+            <span class="material-symbols-outlined">celebration</span>
+            <button id="resetBtn">Reset</button>
         </div>
-        <span class="material-symbols-outlined">celebration</span>
-        <button id="resetBtn">Reset</button>
-    </div>
 
-    <div class="overlay"></div>
-</div>
+        <div class="overlay"></div>
+    </div>
 
 
 
@@ -90,6 +90,6 @@
 
         <h2 id="gameWinner"></h2>
     </div> -->
-    <script src="./script.js" async></script>
+    <script src="./script.js"></script>
 </body>
 </html>
