@@ -8,8 +8,6 @@ const computerChoiceDisp = document.getElementsByClassName('computerIcon');     
 const playerScoreDisp = document.getElementById('playerScoreDisp');             //Player Score display//
 const computerScoreDisp = document.getElementById('computerScoreDisp');         //Comp Score display//
 
-const winnerModal = document.getElementById('winnerModal');                     //Game winner pop-up//
-
 
 let playerChoice            //The button clicked by player//
 let computerSelection       //The random number assigned to rps//
@@ -20,12 +18,12 @@ let computerScore = 0;      //Computer score//
 
 // User Choice Button clicks//
 
-possibleChoices.forEach(possibleChoice => possibleChoice.addEventListener('click', (e) =>{
-    playerChoice = e.target.id
-    showPlayerIcon()
-    generateCompChoice()
-    getResult()
-    // gameOver()
+possibleChoices.forEach(possibleChoice => possibleChoice.addEventListener('click', (e) => {
+    playerChoice = e.target.id;
+    showPlayerIcon();
+    generateCompChoice();
+    getResult();
+    gameOver();
 }))
 
 
@@ -47,6 +45,8 @@ function showPlayerIcon() {
     playerChoiceDisp.innerHTML = playerElement;
     console.log(playerChoice);
 }
+
+
 
 
 // Generating random comp selection//
@@ -79,7 +79,10 @@ function generateCompChoice(){
 function getResult() {
 
      if (playerChoice === computerSelection) {
-       
+       winnerPlayer();
+       winnerComp();
+       playerScoreDisp.innerHTML = playerScore +=1;
+       computerScoreDisp.innerHTML = computerScore +=1;
     } 
     else if (
         (playerChoice === 'scissors' && computerSelection === 'paper')
@@ -88,9 +91,8 @@ function getResult() {
         ||
         (playerChoice === 'rock' && computerSelection === 'scissors')
         ) {
-            console.log('Player Wins');
             winnerPlayer();
-            return playerScoreDisp.innerHTML = playerScore +1;
+            return playerScoreDisp.innerHTML = playerScore +=1;
     } 
     else if (
         (playerChoice === 'rock' && computerSelection === 'paper')
@@ -99,27 +101,10 @@ function getResult() {
         ||
         (playerChoice === 'scissors' && computerSelection === 'rock')
         ) {
-            console.log('Comp Wins');
             winnerComp();
-            return computerScoreDisp.innerHTML = computerScore +1;
+            return computerScoreDisp.innerHTML = computerScore +=1;
         }
    
-}
-
-
-// Game = best of 5 rounds.
-
-function gameOver() {
-    if (playerScore === 5 && computerScore < 5) {
-        gameWinner.innerHTML = 'You win!'
-        playerScore = 0
-        computerScore = 0
-    } else if (playerScore < 5 && computerScore === 5) {
-        gameWinner.innerHTML = 'Computer wins!' 
-        playerScore = 0
-        computerScore = 0  
-    }
-    
 }
 
 //functions to display winner border//
@@ -133,15 +118,40 @@ function winnerComp() {
 }
 
 
-//player wins//
-// (playerChoice === 'scissors' && computerSelection === 'paper')
-// (playerChoice === 'paper' && computerSelection === 'rock')
-// (playerChoice === 'rock' && computerSelection === 'scissors')
 
-//comp wins
-// (playerChoice === 'rock' && computerSelection === 'paper')
-// (playerChoice === 'paper' && computerSelection === 'scissors')
-// (playerChoice === 'scissors' && computerSelection === 'rock')
+// Game = best of 5 rounds.
+
+function gameOver() {
+    if (playerScore === 5 && computerScore < 5) {
+        playerScore = 0
+        computerScore = 0
+    } else if (playerScore < 5 && computerScore === 5) { 
+        playerScore = 0
+        computerScore = 0  
+    } else {
+    }
+    
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

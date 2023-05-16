@@ -6,7 +6,7 @@
 /*--------------------Game Board Area--------------------*/
 div.gameArea {
     border: 3px solid #595959;
-    background-color: #38a692;
+    background-image: linear-gradient(to bottom right, #39BF99, #38A692);
     border-radius: 8px;
     box-shadow: 5px 5px 15px #595959;
 
@@ -28,7 +28,7 @@ h1 {
     color: #f2f2f2;
     text-shadow: -1.5px -1.5px 0 #595959, 1.5px -1.5px 0 #595959, -1.5px 1.5px 0 #595959, 1.5px 1.5px 0 #595959;
     text-align: center;
-    margin: 40px 0px 40px 0px;
+    margin: 40px 20px 40px 20px;
 }
 
 
@@ -38,6 +38,7 @@ h1 {
     display: flex;
     justify-content: space-evenly;
     flex-wrap: wrap;
+    gap: 10px;
 
     margin-bottom: 2rem;
 }
@@ -49,11 +50,13 @@ h1 {
     color: #595959;
     font-family: 'Roboto Mono', monospace;
     font-size: 1.5rem;
+    cursor: pointer;
 
     min-width: 200px;
     min-height: 50px;
 
     transform: scale(1);
+    transition: 100ms;
 }
 .selections button:hover {
     transform: scale(1.1);
@@ -129,7 +132,7 @@ h2 {
     padding-top: 150px;
 }
 
-/* Border Styling */
+/* ----------------Border Styling------------------- */
 
 .playerWinnerBorder {
     box-shadow: 0 0 0 8px #38a692, 0 0 0 15px #d76530; 
@@ -137,12 +140,12 @@ h2 {
 .compWinnerBorder {
     box-shadow: 0 0 0 8px #38a692, 0 0 0 15px #d76530;
 }
-
 /*--------------------Icons Styling--------------------*/
 
 .playerIcon span, .computerIcon span {
     color: #595959;
     font-size: 8rem;
+    background-color: #f2f2f2;
 }
 #playerRockIcon {
     position: absolute;
@@ -190,28 +193,6 @@ h2 {
 
 
 
-/*--------------------Winner Box Styling--------------------*/
-
-
-
-/* #playerWinnerBorder { */
-    /* border: 6px solid #38a692; */
-    /* outline: 6px solid #d76530;
-    border-radius: 3px;
-    padding: 10px 15px 15px 10px;
-
-    width: 210px;
-    height: 210px;
-}
-#computerWinnerBorder {
-    border: 6px solid #d76530;
-    border-radius: 5px;
-    padding: 10px 15px 15px 10px;
-
-    width: 210px;
-    height: 210px;
-} */
-
 
 /*--------------------Score Card Styling--------------------*/
 
@@ -227,92 +208,4 @@ h2 {
     text-align: center;
 }
 
-/*--------------------Modal Styling--------------------*/
-.modalBody {
-    position: fixed;
-    top: 35%;
-    left: 50%;
-    transform: translate(-50%, -50%) scale(0);
-    z-index: 10;
 
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-
-    min-width: 250px;
-    min-height: 150px;
-
-    border: 3px solid #f2f2f2;
-    border-radius: 8px;
-    background-color: #39bf99;
-
-    transition: 200ms ease-in-out;
-}
-.modalBody.active {
-    transform: translate(-50%, -50%) scale(1);
-}
-.closeBtn {
-    align-self: flex-end;
-
-    cursor: pointer;
-    border: none;
-    outline: none;
-    background: none;
-
-    font-size: 1.5rem;
-    color: #595959;
-}
-.modalText {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-
-    font-family: 'Roboto Mono', monospace;
-    font-size: 2rem;
-    color: #f2f2f2;
-    text-shadow: -0.7px -0.7px 0 #595959, 0.7px -0.7px 0 #595959, -0.7px 0.7px 0 #595959, 0.7px 0.7px 0 #595959;
-
-    margin-top: 1rem;
-}
-.modalBody span {
-    color: #d76530;
-    text-shadow: 1px 1px 0 #f2f2f2;
-
-    font-size: 3rem;
-
-    margin-top: 1rem;
-}
-#resetBtn {
-    background-color: #f2f2f2;
-    border: 2px solid #595959;
-    border-radius: 5px;
-
-    color: #595959;
-    font-family: 'Roboto Mono', monospace;
-    font-size: 1.1rem;
-
-    min-width: 130px;
-    min-height: 30px;
-
-    margin: 1rem 0;
-}
-
-.overlay {
-    position: fixed;
-    transition: 200ms ease-in-out;
-
-    opacity: 0;
-    background-color: #595959b3;
-
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-
-    pointer-events: none;
-}
-.overlay.active {
-    opacity: 1;
-    pointer-events: all;
-}
