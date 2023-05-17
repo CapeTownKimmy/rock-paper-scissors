@@ -140,59 +140,6 @@ h2 {
 .compWinnerBorder {
     box-shadow: 0 0 0 8px #38a692, 0 0 0 15px #d76530;
 }
-/*--------------------Icons Styling--------------------*/
-
-.playerIcon span, .computerIcon span {
-    color: #595959;
-    font-size: 8rem;
-    background-color: #f2f2f2;
-}
-#playerRockIcon {
-    position: absolute;
-    top: 50px;
-    left: 40px;
-
-    visibility: hidden;
-}
-#playerPaperIcon {
-    position: absolute;
-    top: 50px;
-    left: 40px;
-
-    visibility: hidden;
-}
-#playerScissorsIcon {
-    position: absolute;
-    top: 50px;
-    left: 40px;
-
-    visibility: hidden;
-}
-
-#compRockIcon {
-    position: absolute;
-    top: 50px;
-    left: 40px;
-
-    visibility: hidden;
-}
-#compPaperIcon {
-    position: absolute;
-    top: 50px;
-    left: 40px;
-
-    visibility: hidden;
-}
-#compScissorsIcon {
-    position: absolute;
-    top: 50px;
-    left: 40px;
-
-    visibility: hidden;
-}
-
-
-
 
 /*--------------------Score Card Styling--------------------*/
 
