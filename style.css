@@ -179,10 +179,10 @@ h2 {
 }
 .popUpContent {
     background-color: #38A692;
-    border: 4px solid #595959;
+    border: 4px solid white;
     border-radius: 8px;
 
-    width: 40%;
+    max-width: 40%;
 
     margin: 20% auto;
     padding: 20px;
@@ -201,8 +201,8 @@ h2 {
     text-align: center;
 }
 .celebrateIcon {
-    width: 150px;
-    color: #d76530;
+    max-width: 150px;
+    filter: invert();
 }
 #resetGameBtn {
     background-color: #f2f2f2;
@@ -220,11 +220,11 @@ h2 {
     transform: scale(1);
     transition: 100ms;
 }
-.resetGameBtn:hover {
+#resetGameBtn:hover {
     transform: scale(1.1);
     box-shadow: 2px 2px 4px #595959;
 }
-.resetGameBtn:active {
+#resetGameBtn:active {
     transform: scale(0.99);
     border: 1px solid #f2f2f2;
     background-color: #595959;
@@ -232,3 +232,16 @@ h2 {
     color: #f2f2f2;
     box-shadow: 2px 2px 4px #595959;
 } 
+@media only screen and (max-width: 497px) {
+    #popUpText {
+        font-size: 2rem;
+        
+    }
+    .celebrateIcon {
+        max-width: 80px;
+    }
+    #resetGameBtn {
+        font-size: 1.3rem;
+        min-width: 100px ;
+    }
+}
