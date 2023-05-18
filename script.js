@@ -154,10 +154,11 @@ function gameOver() {
     if (playerScore === 5 && computerScore < 5) {
         playerScore = 0
         computerScore = 0
+        showWinner();
     } else if (playerScore < 5 && computerScore === 5) { 
         playerScore = 0
-        computerScore = 0  
-    } else {
+        computerScore = 0
+        showWinner();  
     }
     
 }
@@ -174,7 +175,10 @@ function resizeIconsComp() {
 }
 
 
-
+// Winner pop up//
+function showWinner() {
+    
+}
 
 
 
