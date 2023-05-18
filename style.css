@@ -89,6 +89,14 @@ h2 {
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-wrap: wrap;
+}
+
+/* Resposive screen layout */
+@media only screen and (max-width: 699px) {
+    .gameContainer {
+        flex-direction: column;
+    }
 }
 
 .playerContainer, .computerContainer {
@@ -128,8 +136,8 @@ h2 {
     font-weight: 100;
     text-shadow: -0.7px -0.7px 0 #595959, 0.7px -0.7px 0 #595959, -0.7px 0.7px 0 #595959, 0.7px 0.7px 0 #595959;
 
-    align-self: flex-start;
-    padding-top: 150px;
+    align-self: center;
+    padding: 10px;
 }
 
 /* ----------------Border Styling------------------- */
@@ -168,7 +176,6 @@ h2 {
     top: 0;
 
     display: none;
-    /* pointer-events: ; */
 }
 .popUpContent {
     background-color: #38A692;
