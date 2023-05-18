@@ -151,6 +151,8 @@ function gameOver() {
         showWinner();
     } else if (playerScore < 5 && computerScore === 5) { 
         showWinnerComp();  
+    } else if (playerScore === 5 && computerScore ===5) {
+        showWinnerTie();
     }
     
 }
@@ -178,6 +180,12 @@ function showWinnerComp() {
     winnerMessage.innerHTML = 'Computer Wins!!';
     resetGameBtn.addEventListener('click', closeAndReset);
 }
+function showWinnerTie() {
+    popUp.style.display = 'block';
+    winnerMessage.innerHTML = "It's a Tie!!";
+    resetGameBtn.addEventListener('click', closeAndReset);
+}
+
 
 //Close Pop Up and reset game//
 
