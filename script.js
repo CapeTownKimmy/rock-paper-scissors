@@ -11,6 +11,12 @@ const winnerBorderComp = document.getElementById('computerChoice')      //Winner
 const playerScoreDisp = document.getElementById('playerScoreDisp');     //Player Score display//
 const computerScoreDisp = document.getElementById('computerScoreDisp'); //Comp Score display//
 
+const popUp = document.getElementById('popUpContainer');                //Winner pop up message//
+const resetGameBtn = document.getElementById('resetGameBtn');           //Reset Game button//
+const winnerMessage = document.getElementById('popUpText');             //Customisable winner message//
+const playerWins = 'You Win!!'
+const computerWins = 'Computer Wins!!'
+
 
 let playerChoice;               //The button clicked by player//
 let computerSelection;          //The random number assigned to rps//
@@ -35,12 +41,7 @@ possibleChoices.forEach(possibleChoice => possibleChoice.addEventListener('click
 
 function showPlayerIcon() {
 
-    if(playerElement !== undefined) {
-        playerChoiceDisp.removeChild(playerElement);
-    }
-    if (winnerBorderPlayer.classList.contains('playerWinnerBorder')) {
-        winnerBorderPlayer. classList.remove('playerWinnerBorder');
-    }
+    clearIconsPlayer();
   
     switch (playerChoice) {
         case 'rock':
@@ -61,7 +62,7 @@ function showPlayerIcon() {
     }
     
     playerChoiceDisp.appendChild(playerElement);
-    console.log(playerChoice);
+    // console.log(playerChoice);
 }
 
 
@@ -71,12 +72,7 @@ function showPlayerIcon() {
 
 function generateCompChoice(){
 
-    if(compElement !== undefined) {
-        computerChoiceDisp.removeChild(compElement);
-    }
-    if (winnerBorderComp.classList.contains('compWinnerBorder')) {
-        winnerBorderComp.classList.remove('compWinnerBorder');
-    }
+    clearIconsComp();
 
     computerSelection = Math.floor(Math.random() * 3) + 1;
 
@@ -102,7 +98,7 @@ function generateCompChoice(){
         }
 
     computerChoiceDisp.appendChild(compElement);
-    console.log(computerSelection);
+    // console.log(computerSelection);
 }
 
 //Round
@@ -152,13 +148,9 @@ function winnerComp() {
 
 function gameOver() {
     if (playerScore === 5 && computerScore < 5) {
-        playerScore = 0
-        computerScore = 0
         showWinner();
     } else if (playerScore < 5 && computerScore === 5) { 
-        playerScore = 0
-        computerScore = 0
-        showWinner();  
+        showWinnerComp();  
     }
     
 }
@@ -177,12 +169,44 @@ function resizeIconsComp() {
 
 // Winner pop up//
 function showWinner() {
-    
+    popUp.style.display = 'block';
+    winnerMessage.innerHTML = 'You Win!!';
+    resetGameBtn.addEventListener('click', closeAndReset);
+}
+function showWinnerComp() {
+    popUp.style.display = 'block';
+    winnerMessage.innerHTML = 'Computer Wins!!';
+    resetGameBtn.addEventListener('click', closeAndReset);
 }
 
+//Close Pop Up and reset game//
 
+function closeAndReset() {
+    window.location.reload();
+}
 
+//Clear Icons//
+function clearIconsPlayer(){
+    if(playerElement !== undefined) {
+        playerChoiceDisp.removeChild(playerElement);
+    }
+    if (winnerBorderPlayer.classList.contains('playerWinnerBorder')) {
+        winnerBorderPlayer. classList.remove('playerWinnerBorder');
+    } else {
+        return
+    }
+}
 
+function clearIconsComp() {
+    if(compElement !== undefined) {
+        computerChoiceDisp.removeChild(compElement);
+    }
+    if (winnerBorderComp.classList.contains('compWinnerBorder')) {
+        winnerBorderComp.classList.remove('compWinnerBorder');
+    } else {
+        return
+    }
+}
 
 
 
